@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性-计算属性</title>
+</head>
+<body>
+<div id="example">
+	<p>Original message: "{{ message }}"</p>
+	<p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			message: 'Hello'
+		},
+		computed: {
+			// a computed getter
+			reversedMessage: function () {
+				// `this` points to the vm instance
+				return this.message.split('').reverse().join('')
+			}
+		}
+	})
+
+	//为了测试vm.reversedMessage 的值始终取决于 vm.message 的值。
+	setTimeout(function () {
+		vm.message = 'Goodbye'
+		console.log(vm.reversedMessage) // -> 'eybdooG'
+	}, 1000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>介绍-组件化应用构建-假设的例子</title>
+</head>
+<body>
+<div id="app">
+	<app-nav></app-nav>
+	<app-view>
+		<app-sidebar></app-sidebar>
+		<app-content></app-content>
+	</app-view>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	Vue.component('app-nav', {
+		template: '<nav>我是头部</nav>'
+	})
+	Vue.component('app-view', {
+		template: '<div><slot></slot></div>'
+	})
+	Vue.component('app-sidebar', {
+		template: '<div>我是侧边栏</div>'
+	})
+	Vue.component('app-content', {
+		template: '<div>我是主体内容</div>'
+	})
+	var app = new Vue({
+		el: '#app'
+	})
+</script>
+</body>
+</html>

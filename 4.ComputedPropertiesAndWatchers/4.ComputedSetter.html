@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性-计算 setter</title>
+</head>
+<body>
+<div id="demo">{{ fullName }}</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#demo',
+		data: {
+			firstName: 'Foo',
+			lastName: 'Bar'
+		},
+		computed: {
+			fullName: {
+				// getter
+				get: function () {
+					return this.firstName + ' ' + this.lastName
+				},
+				// setter
+				set: function (newValue) {
+					var names = newValue.split(' ')
+					this.firstName = names[0]
+					this.lastName = names[names.length - 1]
+				}
+			}
+		}
+	})
+
+	setTimeout(function () {
+		vm.fullName = 'John Adams';
+		console.log(vm.firstName);//John
+		console.log(vm.lastName);//Adams
+	}, 1000);
+
+</script>
+</body>
+</html>

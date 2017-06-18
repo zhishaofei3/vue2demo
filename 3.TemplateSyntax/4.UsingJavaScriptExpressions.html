@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法-使用 JavaScript 表达式</title>
+</head>
+<body>
+<div id="app">
+	<div>{{ number + 1 }}</div>
+	<div>{{ ok ? 'YES' : 'NO' }}</div>
+	<div>{{ message.split('').reverse().join('') }}</div>
+	<div v-bind:id="'list-' + id"></div>
+	<div>{{parseInt(Math.random() * 10)}}</div>
+	<div>{{Date()}}</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			number: 4,
+			ok: false,
+			message: 'I love Vue.js',
+			id: 1
+		}
+	})
+</script>
+</body>
+</html>

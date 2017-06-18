@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法-缩写</title>
+</head>
+<body>
+<div id="app">
+	<a :href="url">vue.js</a>
+	<a @click="doSomething">click me</a>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			url: 'https://cn.vuejs.org'
+		},
+		methods: {
+			doSomething: function () {
+				alert("hi Vue!");
+			}
+		}
+	})
+</script>
+</body>
+</html>

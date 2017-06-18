@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法-参数</title>
+</head>
+<body>
+<div id="app">
+	<a v-on:click="doSomething">Vue官网</a>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		methods: {
+			doSomething: function () {
+				alert("即将前往Vue官网")
+				location.href = 'https://cn.vuejs.org'
+			}
+		}
+	})
+</script>
+</body>
+</html>

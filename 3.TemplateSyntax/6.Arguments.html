@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法-参数</title>
+</head>
+<body>
+<div id="app">
+	<a v-bind:href="url">Vue官网</a>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			url: 'https://cn.vuejs.org'
+		}
+	})
+</script>
+</body>
+</html>

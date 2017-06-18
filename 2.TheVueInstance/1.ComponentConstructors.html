@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue 实例-组件构造器</title>
+</head>
+<body>
+<div id="app">
+	{{ message }}
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var MyComponent = Vue.extend({
+		data: function () {
+			return {
+				a: 5
+			}
+		}
+	})
+	// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+	var myComponentInstance = new MyComponent()
+	console.log(myComponentInstance.a);//5
+</script>
+</body>
+</html>

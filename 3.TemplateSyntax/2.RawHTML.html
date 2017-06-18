@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板语法-纯HTML</title>
+</head>
+<body>
+<div id="app">
+	<div v-html="rawHtml"></div>
+	<div>{{rawHtml}}</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			rawHtml: '<i>我是斜体文字</i><b>我是粗体文字</b>'
+		}
+	})
+</script>
+</body>
+</html>
