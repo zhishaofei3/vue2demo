@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染-template中v-if条件组</title>
+</head>
+<body>
+<div id="example">
+	<template v-if="ok">
+		<h1>Title</h1>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+	</template>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			ok: true
+		}
+	})
+</script>
+</body>
+</html>

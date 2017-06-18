@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染 v-if与v-for一起使用</title>
+</head>
+<body>
+<div id="example">
+	<li v-for="fruit in fruits" v-if="fruit.indexOf('桃') == -1">
+		{{ fruit }}
+	</li>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			fruits: ['苹果', '柚子', '桃', '杨桃', '金橘', '猕猴桃', '柠檬']
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性-绑定 HTML Class-数组语法</title>
+</head>
+<body>
+<div id="example">
+	<div v-bind:class="[activeClass, errorClass]">我是div</div>
+	<div v-bind:class="[isActive ? activeClass : '', errorClass]">我的div2</div>
+	<div v-bind:class="[{ active: isActive }, errorClass]">我的div3</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			activeClass: 'active',
+			errorClass: 'text-danger',
+			isActive: true
+		}
+	})
+</script>
+</body>
+</html>

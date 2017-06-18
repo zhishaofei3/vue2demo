@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性-绑定 HTML Class-对象语法</title>
+</head>
+<body>
+<div id="example">
+	<div v-bind:class="classObject">我是div</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			classObject: {
+				active: true,
+				'text-danger': false
+			}
+		}
+	})
+</script>
+</body>
+</html>

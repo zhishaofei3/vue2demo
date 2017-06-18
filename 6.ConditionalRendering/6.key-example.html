@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染-用 key 管理可复用的元素</title>
+</head>
+<body>
+<div id="key-example">
+	<div>
+		<template v-if="loginType === 'username'">
+			<label>Username</label>
+			<input placeholder="Enter your username" key="username-input">
+		</template>
+		<template v-else>
+			<label>Email</label>
+			<input placeholder="Enter your email address" key="email-input">
+		</template>
+	</div>
+	<button @click="toggleLoginType">Toggle login type</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#key-example',
+		data: {
+			loginType: 'username'
+		},
+		methods: {
+			toggleLoginType: function () {
+				return this.loginType = this.loginType === 'username' ? 'email' : 'username'
+			}
+		}
+	})
+</script>
+</body>
+</html>

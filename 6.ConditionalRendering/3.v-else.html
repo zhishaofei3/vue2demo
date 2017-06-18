@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染-template中v-if条件组</title>
+</head>
+<body>
+<div id="example">
+	<div v-if="Math.random() > 0.5">
+		Now you see me
+	</div>
+	<div v-else>
+		Now you don't
+	</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: '#example'
+	})
+</script>
+</body>
+</html>

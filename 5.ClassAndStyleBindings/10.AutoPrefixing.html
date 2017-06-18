@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性-绑定内联样式-自动添加前缀</title>
+</head>
+<body>
+<div id="example">
+	<div v-bind:style="styles">我是div</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	Vue.component('my-component', {
+		template: '<p class="foo bar">Hi</p>'
+	})
+	var vm = new Vue({
+		el: '#example',
+		data: {
+			styles: {
+				transform: 'rotate(-30deg)'
+			}
+		}
+	})
+</script>
+</body>
+</html>
