@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 template标签的v-for</title>
+</head>
+<body>
+<ul id="example-2">
+	<template v-for="item in items">
+		<li>{{ item.msg }}</li>
+		<li class="divider">---</li>
+	</template>
+</ul>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example2 = new Vue({
+		el: '#example-2',
+		data: {
+			items: [
+				{msg: 'Foo'},
+				{msg: 'Bar'}
+			]
+		}
+	})
+</script>
+</body>
+</html>

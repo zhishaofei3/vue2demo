@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>计算属性 绑定内联样式-自动添加前缀</title>
+	<title>列表渲染 v-for组件</title>
 </head>
 <body>
 <div id="example">
-	<div v-bind:style="styles">我是div</div>
+	<my-component v-for="(item, index) in items" v-bind:item="item" v-bind:index="index"></my-component>
 </div>
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
 	Vue.component('my-component', {
-		template: '<p class="foo bar">Hi</p>'
+		template: '<div>{{index}} {{item}}</div>',
+		props: ['item', 'index']
 	})
-	var vm = new Vue({
+	new Vue({
 		el: '#example',
 		data: {
-			styles: {
-				transform: 'rotate(-30deg)'
-			}
+			items: ['Foo', 'Bar']
 		}
 	})
 </script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 v-for对象迭代</title>
+</head>
+<body>
+<ul id="repeat-object" class="demo">
+	<li v-for="value in object">
+		{{ value }}
+	</li>
+</ul>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#repeat-object',
+		data: {
+			object: {
+				firstName: 'John',
+				lastName: 'Doe',
+				age: 30
+			}
+		}
+	})
+</script>
+</body>
+</html>
