@@ -25,16 +25,18 @@
 		methods: {
 			// 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制
 			checkKeydown: function (event) {
+				//过滤非法值
 				if(!/[A-Fa-f0-9]/.test(event.key)) {
-					event.preventDefault();//过滤非法值
+					event.preventDefault();
 				}
 			},
 			updateValue: function (value) {
-				// 通过 input 事件发出数值
-				var formattedValue = value.replace(/^0?/g, '').toUpperCase();//不允许0开头 默认大写
+				//不允许0开头 默认大写
+				var formattedValue = value.replace(/^0?/g, '').toUpperCase();
 				if (formattedValue !== value) {
 					this.$refs.input.value = formattedValue
 				}
+				// 通过 input 事件发出数值
 				this.$emit('input', formattedValue)
 			}
 		}
