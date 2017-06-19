@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 内联处理器方法</title>
+</head>
+<body>
+<div id="example-3">
+	<button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example3 = new Vue({
+		el: '#example-3',
+		methods: {
+			warn: function (message, event) {
+				// 现在我们可以访问原生事件对象
+				if (event) event.preventDefault()
+				alert(message)
+			}
+		}
+	})
+</script>
+</body>
+</html>

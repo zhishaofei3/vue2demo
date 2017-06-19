@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 按键修饰符</title>
+</head>
+<body>
+<div id="example">
+	<!-- 原文中的keyup，因为复现比较困难，所以换成了keydown事件 -->
+	<input @keydown.alt.67="clear" v-model="msg">
+
+	<!-- Ctrl + Click -->
+	<div @click.ctrl="doSomething">Do something</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example = new Vue({
+		el: '#example',
+		data: {
+			msg: ''
+		},
+		methods: {
+			clear: function () {
+				this.msg = ''
+			},
+			doSomething: function () {
+				alert('Do something')
+			}
+		}
+	})
+</script>
+</body>
+</html>

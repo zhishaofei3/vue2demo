@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 事件修饰符</title>
+	<style type="text/css">
+		em, a {
+			color: #F00;
+		}
+	</style>
+</head>
+<body>
+<div id="example">
+	<!-- 阻止单击事件冒泡 -->
+	<div v-on:click="alert('子元素阻止了事件冒泡，我不会执行')">
+		<a v-on:click.stop="doThis"></a>
+	</div>
+	<!-- 提交事件不再重载页面 -->
+	<form v-on:submit.prevent="alert('没重载页面，而是执行了函数')">
+		提交事件不再重载页面，并执行自定义的alert方法
+		<input type="submit"/>
+	</form>
+	<!-- 修饰符可以串联  -->
+	<div v-on:click="alert('子元素阻止了事件冒泡，我不会执行')">
+		<a v-on:click.stop.prevent="alert('我阻止了冒泡和跳转')" href="http://jd.com">阻止事件冒泡和跳转</a>
+	</div>
+	<!-- 只有修饰符 -->
+	<form v-on:submit.prevent>
+		提交事件不再重载页面
+		<input type="submit"/>
+	</form>
+	<!-- 添加事件侦听器时使用事件捕获模式 -->
+	<div v-on:click.capture="alert('父元素')">
+		我会在捕获阶段触发，我的<em v-on:click="alert('子元素')">子元素</em>事件会后触发
+	</div>
+	<!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+	<div v-on:click.self="alert('点击了元素本身')">我的<em>子元素</em>不会响应事件</div>
+	<!-- 点击事件将只会触发一次 -->
+	<a v-on:click.once="alert('只能点我一次')">我只会触发一次</a>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example = new Vue({
+		el: '#example',
+		methods: {
+			alert: function (message) {
+				alert(message)
+			}
+		}
+	})
+</script>
+</body>
+</html>

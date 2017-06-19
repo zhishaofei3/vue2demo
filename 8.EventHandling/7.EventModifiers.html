@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 按键修饰符</title>
+</head>
+<body>
+<div id="example">
+	<!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+	<input v-on:keyup.13="submit">
+	<!-- 同上 -->
+	<input v-on:keyup.enter="submit">
+	<!-- 缩写语法 -->
+	<input @keyup.enter="submit">
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example = new Vue({
+		el: '#example',
+		methods: {
+			submit: function (message) {
+				alert('你按了回车键')
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 按键修饰符 全部的按键别名</title>
+</head>
+<body>
+<div id="example">
+	<input v-on:keyup.enter.tab.delete.esc.space.up.down.left.right="alert($event)">
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example = new Vue({
+		el: '#example',
+		methods: {
+			alert: function (event) {
+				console.log('你按了' + event.code + '键');
+			}
+		}
+	})
+</script>
+</body>
+</html>

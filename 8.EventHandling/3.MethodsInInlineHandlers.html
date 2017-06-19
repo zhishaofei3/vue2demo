@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理器 内联处理器方法</title>
+</head>
+<body>
+<div id="example-3">
+	<button v-on:click="say('hi')">Say hi</button>
+	<button v-on:click="say('what')">Say what</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example3 = new Vue({
+		el: '#example-3',
+		methods: {
+			say: function (message) {
+				alert(message)
+			}
+		}
+	})
+</script>
+</body>
+</html>
