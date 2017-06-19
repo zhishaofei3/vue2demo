@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 绑定Value 复选框</title>
+</head>
+<body>
+<div id="example">
+	点我看控制台值的变化
+	<input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b">
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			toggle: '',
+			a: 'aaa',
+			b: 'bbb'
+		},
+		watch: {
+			toggle: function (val) {
+				console.log(val);
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 绑定value</title>
+</head>
+<body>
+<div id="example">
+	<!-- 当选中时，`picked` 为字符串 "a" -->
+	<input type="radio" v-model="picked" value="a">
+	<input type="radio" v-model="picked" value="b">
+	<!-- `toggle` 为 true 或 false -->
+	<input type="checkbox" v-model="toggle">
+	<!-- 当选中时，`selected` 为字符串 "abc" -->
+	<select v-model="selected">
+		<option value="abc">ABC</option>
+		<option value="bcd">BCD</option>
+	</select>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			picked: '',
+			toggle: '',
+			selected: ''
+		},
+		watch: {
+			picked: function (val) {
+				console.log(val);
+			},
+			toggle: function (val) {
+				console.log(val);
+			},
+			selected: function (val) {
+				console.log(val);
+			}
+		}
+	})
+</script>
+</body>
+</html>

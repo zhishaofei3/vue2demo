@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 基础用法 复选框</title>
+</head>
+<body>
+<div id="example-1">
+	<input type="checkbox" id="checkbox" v-model="checked">
+	<label for="checkbox">{{ checked }}</label>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	var example1 = new Vue({
+		el: '#example-1',
+		data: {
+			checked: false
+		}
+	})
+</script>
+</body>
+</html>

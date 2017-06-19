@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 修饰符 .trim</title>
+</head>
+<body>
+<div id="example">
+	我的值不会含有空格
+	<input v-model.trim="msg">
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			msg: '',
+		},
+		watch: {
+			msg: function (val) {
+				console.log(val);
+			}
+		}
+	})
+</script>
+</body>
+</html>

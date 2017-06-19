@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 修饰符 .number</title>
+</head>
+<body>
+<div id="example">
+	<input v-model.number="age" type="number">
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			age: 0,
+		},
+		watch: {
+			age: function (val) {
+				console.log(val);
+			}
+		}
+	})
+</script>
+</body>
+</html>

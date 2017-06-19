@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控件绑定 绑定Value 单选按钮</title>
+</head>
+<body>
+<div id="example">
+	点我看控制台输出
+	<select v-model="selected">
+		<!-- 内联对象字面量 -->
+		<option v-bind:value="{ number: 123 }">我是123</option>
+		<option v-bind:value="{ number: 234 }">我是234</option>
+	</select>
+</div>
+	<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			selected: ''
+		},
+		watch: {
+			selected: function (val) {
+				console.log(val.number);
+			}
+		}
+	})
+</script>
+</body>
+</html>
