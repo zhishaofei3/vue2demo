@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 数组更新检测 非变异方法 重塑数组</title>
+</head>
+<body>
+<div id="example">
+	<div v-for="item in items">
+		{{ item }}
+	</div>
+	<button @click="filter()">filter()</button>
+	<button @click="concat()">concat()</button>
+	<button @click="slice()">slice()</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			items: [
+				'苹果',
+				'香蕉',
+				'梨',
+				'草莓',
+				'桃',
+				'哈密瓜',
+				'木瓜',
+				'樱桃'
+			]
+		},
+		methods: {
+			filter: function () {
+				this.items = this.items.filter(function (item) {
+					return item.match(/瓜/);
+				})
+			},
+			concat: function () {
+				this.items = this.items.concat(['西瓜', '甜瓜', '哈密瓜'], ['柿子', '山竹', '黑布林']);
+			},
+			slice: function () {
+				this.items = this.items.slice(-2);
+			}
+		}
+	})
+</script>
+</body>
+</html>

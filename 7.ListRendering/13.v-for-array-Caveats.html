@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 数组更新检测 数组注意事项 spliceReplace 利用索引直接设置一个项的替换方案</title>
+</head>
+<body>
+<div id="example">
+	<div v-for="item in items">
+		{{ item }}
+	</div>
+	<button @click="vueSetReplace()">利用索引直接设置一个项 Vue.set替换方案</button>
+	<button @click="spliceReplace()">利用索引直接设置一个项 Array.prototype.splice替换方案</button>
+	<button @click="splice()">修改数组的长度</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			items: [
+				'苹果',
+				'香蕉',
+				'梨',
+				'草莓',
+				'桃',
+				'哈密瓜',
+				'木瓜',
+				'樱桃'
+			]
+		},
+		methods: {
+			vueSetReplace: function () {
+				Vue.set(this.items, 5, '甜瓜')
+			},
+			spliceReplace: function () {
+				this.items.splice(3, 1, '山竹')
+			},
+			splice: function () {
+				this.items.splice(3)
+			}
+		}
+	})
+</script>
+</body>
+</html>

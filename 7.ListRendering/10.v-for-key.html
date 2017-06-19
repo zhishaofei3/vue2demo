@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 v-for结合key</title>
+</head>
+<body>
+<div id="example">
+	<div v-for="item in items" :key="item.id">
+		{{ item }} {{item.id}}
+	</div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			items: [
+				{id: '88f869d', message: 'Foo'},
+				{id: '7496c10', message: 'Bar'}
+			]
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染 数组更新检测 变异方法</title>
+</head>
+<body>
+<div id="example">
+	<div v-for="item in items">
+		{{ item }}
+	</div>
+	<button @click="items.push('葡萄')">push()</button>
+	<button @click="items.pop()">pop()</button>
+	<button @click="items.shift()">shift()</button>
+	<button @click="items.unshift('火龙果')">unshift()</button>
+	<button @click="items.splice(2, 1, '菠萝')">splice()</button>
+	<button @click="items.sort()">sort()</button>
+	<button @click="items.reverse()">reverse()</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#example',
+		data: {
+			items: [
+				'苹果',
+				'香蕉',
+				'梨',
+				'草莓',
+				'桃',
+				'哈密瓜',
+				'木瓜',
+				'樱桃'
+			]
+		}
+	})
+</script>
+</body>
+</html>
